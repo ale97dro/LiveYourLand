@@ -2,9 +2,6 @@ package com.bianchi.platform.controllertest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 public class ControllerTest
@@ -16,3 +13,15 @@ public class ControllerTest
         return "index";
     }
 }
+
+
+/*
+PROPERTIES FOR DB
+    spring.datasource.url=jdbc:mysql://localhost:3306/tourism
+    spring.jpa.generate-ddl=true
+    spring.jpa.hibernate.ddl-auto=update
+    spring.datasource.username=user
+    spring.datasource.password=123456
+    spring.jmx.enabled=false
+    spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+ */
