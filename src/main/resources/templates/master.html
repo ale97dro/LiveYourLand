@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{'/css/index.css'}" media="screen" />
+    <link th:href="@{/webjars/bootstrap/4.1.3/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+
+<footer class="footer card-footer bg-transparent" th:fragment="footer">
+    <small>Copyleft CC-by 2018 by Alessandro Bianchi</small>
+</footer>
+
+
+<nav th:fragment="navBar">
+    <ul class="nav">
+        <li class="navVoice">
+            <a class="navFont" th:href="@{'/'}">Home</a>
+        </li>
+        <li class="navVoice" >
+            <a class="navFont" th:href="@{'/blog/new'}">Tutte le destinazioni</a>
+        </li>
+        <li class="navVoice">
+            <a class="navFont" th:href="@{'/all'}">Forum</a>
+        </li>
+
+        <li class="navVoice">
+            <input th:type="text" value="Cerca"/>
+            <button>Cerca</button>
+        </li>
+        <!--<li class ="navVoice" sec:authorize="hasRole('ADMIN')">-->
+            <!--<a class="navFont" th:href="@{'/deleted'}">Deleted blogpost</a>-->
+        <!--</li>-->
+
+        <!--<li class="navVoice" sec:authorize="isAnonymous()">-->
+            <!--<a class="navFont" th:href="@{'/login'}">Login</a>-->
+        <!--</li>-->
+        <!--<li class="navVoice" sec:authorize="isAnonymous()">-->
+            <!--<a class="navFont" th:href="@{'/register'}">Register</a>-->
+        <!--</li>-->
+        <!--<li class="navVoice" sec:authorize="isAuthenticated()">-->
+            <!--<a class="navFont" th:href="@{'/logout'}">Logout</a>-->
+        <!--</li>-->
+        <!--<li class="navVoice" sec:authorize="isAuthenticated()">-->
+            <!--<p class="navFont" sec:authentication="name">name</p>-->
+        <!--</li>-->
+    </ul>
+</nav>
+
+
+</body>
+</html>
