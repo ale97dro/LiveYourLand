@@ -13,9 +13,12 @@ public class City {
     private String name;
     private String description;
 
-    @ManyToOne
-    @JoinColumn(name="fk_profilePic")
-    private Picture profilePic;
+    @OneToOne(mappedBy = "place", cascade = CascadeType.ALL)
+    private CityProfilePic profilePic;
+
+
+    @Transient
+    private String truncateDescription;
 
     public City(String name, String description)
     {
@@ -49,7 +52,33 @@ public class City {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(String description)
+    {
         this.description = description;
+        this.truncateDescription = this.description.substring(0, 50);
+    }
+
+    public CityProfilePic getProfilePic() {
+        return profilePic;
+    }
+
+    public void setProfilePic(CityProfilePic profilePic) {
+        this.profilePic = profilePic;
+    }
+
+    public String getTruncateDescription() {
+        return truncateDescription;
+    }
+
+    public void createTruncateDescription()
+    {
+        try
+        {
+            truncateDescription = description.substring(0, 50);
+        }
+        catch (Exception ex)
+        {
+            truncateDescription = description;
+        }
     }
 }

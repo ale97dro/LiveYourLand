@@ -31,7 +31,7 @@
             </div>
             <div class="col">
                 <!--2 of 2-->
-                <img class="img-fluid rounded" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Brebbia%2C_VA_-_OM_v_S%2C_Prealpi_Luganesi.jpg/1280px-Brebbia%2C_VA_-_OM_v_S%2C_Prealpi_Luganesi.jpg" alt="brebbia">
+                <img class="img-fluid rounded" th:src="${city.getProfilePic().getPath()}" alt="brebbia">
             </div>
         </div>
 
@@ -70,19 +70,10 @@
             </div>
         </div>
 
-        <h3>Galleria</h3>
+        <h3 th:if="${#lists.size(pictures)!=0}">Galleria</h3>
         <div class="row">
-            <div class="col">
-                <img class="img-fluid rounded" src="http://www.monverdepiante.it/wp-content/uploads/2015/03/phoca_thumb_l_bardello.jpg" alt="brebbia">
-            </div>
-            <div class="col">
-                <img class="img-fluid rounded" src="http://lightstorage.laprovinciadivarese.it/mediaon/cms.quotidiani/storage/site_media/media/photologue/2015/1/15/photos/cache/brebbia-laut-aut-del-sindaco-via-quelle-barche-dal-bardello_07c1e3c0-9cc9-11e4-8bc5-ca5fa6116fe6_998_397_original.jpg" alt="brebbia">
-            </div>
-            <div class="col">
-                <img class="img-fluid rounded" src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Brebbia%2C_via_maggiore.JPG" alt="brebbia">
-            </div>
-            <div class="col">
-                <img class="img-fluid rounded" src="http://www.lagomaggiore.net/blog/wp-content/uploads/2015/11/chiesa-SPietro-Brebbia.jpg" alt="brebbia">
+            <div class="col" th:each="picture : ${pictures}">
+                <img class="img-fluid rounded" th:src="${picture.getPath()}" alt="img">
             </div>
         </div>
 

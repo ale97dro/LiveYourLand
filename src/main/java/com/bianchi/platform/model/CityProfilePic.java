@@ -3,8 +3,8 @@ package com.bianchi.platform.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "picture")
-public class Picture
+@Table(name = "cityprofilepic")
+public class CityProfilePic
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,12 +13,8 @@ public class Picture
     private String name;
     private String path;
 
-    @ManyToOne
-    @JoinColumn(name="fk_author")
-    private User author;
-
-    @ManyToOne
-    @JoinColumn(name="fk_city")
+    @OneToOne
+    @MapsId
     private City place;
 
     public int getId() {
@@ -43,14 +39,6 @@ public class Picture
 
     public void setPath(String path) {
         this.path = path;
-    }
-
-    public User getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(User author) {
-        this.author = author;
     }
 
     public City getPlace() {
