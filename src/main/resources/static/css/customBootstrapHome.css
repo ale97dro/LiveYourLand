@@ -1,0 +1,6 @@
+.card-body-custom {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    background: rgba(80, 144, 221, 0.56);
+}

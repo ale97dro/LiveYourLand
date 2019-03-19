@@ -1,0 +1,97 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>City</title>
+    <link rel="stylesheet" type="text/css" th:href="@{'/css/common.css'}" media="screen" />
+    <link rel="stylesheet" type="text/css" th:href="@{'/css/index.css'}" media="screen" />
+    <link th:href="@{/webjars/bootstrap/4.1.3/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+
+<body class="background">
+    <div class="container">
+
+        <header class="header">
+            <a th:href="@{/}">
+                <img th:src="@{'/icon/logo.jpg'}" alt="logo">
+            </a>
+        </header>
+
+        <div th:replace="~{master :: navBar}"></div>
+
+        <br><br>
+
+
+        <div class="row">
+            <div class="col">
+                <h1><p th:text="${city.getName()}">City name</p> </h1>
+
+                <p th:text="${city.getDescription()}">City description</p>
+                <!--1 of 2-->
+            </div>
+            <div class="col">
+                <!--2 of 2-->
+                <img class="img-fluid rounded" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Brebbia%2C_VA_-_OM_v_S%2C_Prealpi_Luganesi.jpg/1280px-Brebbia%2C_VA_-_OM_v_S%2C_Prealpi_Luganesi.jpg" alt="brebbia">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h3><p>Luoghi di interesse</p></h3>
+                <ul style="list-style: none;" class="list-group">
+                    <li >Chiesa</li>
+                    <li >Lago</li>
+                </ul>
+                <p></p>
+            </div>
+            <div class="col">
+                <h3><p>Eventi</p></h3>
+                <ul style="list-style: none;" class="list-group">
+                    <li>Festa patronale</li>
+                    <li>Mercatini di Natale</li>
+                </ul>
+                <p></p>
+                <!--2 of 3-->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h3><p>Attività</p></h3>
+                <ul style="list-style: none;" class="list-group">
+                    <li>Ristorante</li>
+                    <li>Bar</li>
+                </ul>
+                <p></p>
+            </div>
+            <div class="col">
+                <h3><p>Recensioni</p></h3>
+                <!--3 of 3-->
+            </div>
+        </div>
+
+        <h3>Galleria</h3>
+        <div class="row">
+            <div class="col">
+                <img class="img-fluid rounded" src="http://www.monverdepiante.it/wp-content/uploads/2015/03/phoca_thumb_l_bardello.jpg" alt="brebbia">
+            </div>
+            <div class="col">
+                <img class="img-fluid rounded" src="http://lightstorage.laprovinciadivarese.it/mediaon/cms.quotidiani/storage/site_media/media/photologue/2015/1/15/photos/cache/brebbia-laut-aut-del-sindaco-via-quelle-barche-dal-bardello_07c1e3c0-9cc9-11e4-8bc5-ca5fa6116fe6_998_397_original.jpg" alt="brebbia">
+            </div>
+            <div class="col">
+                <img class="img-fluid rounded" src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Brebbia%2C_via_maggiore.JPG" alt="brebbia">
+            </div>
+            <div class="col">
+                <img class="img-fluid rounded" src="http://www.lagomaggiore.net/blog/wp-content/uploads/2015/11/chiesa-SPietro-Brebbia.jpg" alt="brebbia">
+            </div>
+        </div>
+
+        <p></p>
+
+
+    </div>
+
+
+</body>
+
+</html>
